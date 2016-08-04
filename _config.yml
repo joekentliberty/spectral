@@ -4,10 +4,9 @@
 # Site settings
 title: JoeKentyLiberty | Gay Rights | Liberty
 description: | 
-  ride For Being a Gay Libertarian  
   Get Government Out of Gay Marriage, Minimum Government, Maximum Freedom.  
   Proudly supported by [ChatlinePal](http://chatlinepal.com)
-owner: Your Name # or company name
+owner: JeoKentLiberty # or company name
 first_published: 2016 # if migrating another site, the year of your first publish
 email: your-email@domain.com
 baseurl: "" # the subpath of your site, e.g. /blog
