@@ -14,7 +14,7 @@
     {% endfor %}
   </ul>
   <ul class="copyright">
-  <a href="http://joekentliberty.com" target="_blank">Gay Rights</a>&copy; {% assign thisyear = site.time | date: "%Y" %}
+  <a href="http://joekentliberty.com" target="_blank">Gay Rights</a> &copy; {% assign thisyear = site.time | date: "%Y" %}
     {% if site.first_published %}
       {% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
       {% if diff contains '-' %}{{ site.first_published }},{% endif %}
