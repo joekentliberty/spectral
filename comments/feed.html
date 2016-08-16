@@ -1,115 +1,30 @@
 ---
-layout: page
-permalink: /feed/ 
+layout: null
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-<title>Site Map - JoeKentyLiberty.com</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="Gay rights and liberty from Joekentliberty.com" />
-<style type="text/css">
-body {
-background-color: #fffdfd;
-font: normal 80%  "Roboto", sans-serif;
-margin:0;
-text-align:center;
-}
-#cont{
-margin:auto;
-width:900px;
-text-align:left;
-}
-a:link,a:visited {
-color: #0180AF;
-text-decoration: none;
-}
-a:hover {
-color: #666;
-text-decoration: underline;
-}
-h1 {
-background-color:#fff;
-padding:20px;
-color:#00AEEF;
-text-align:center;
-font-size:32px;
-margin:0px;
-}
-h3 {
-font-size:12px;
-background-color:rgba(0, 123, 162, 0.7);
-margin:0px;
-padding:10px;
-}
-th {
-text-align:center;
-background-color:#00AEEF;
-color:#fff;
-font-weight:normal;
-font-size:12px;
-}
-td {
-font-size:12px;
-padding:8px;
-text-align:left;
-}
-tr {
-background: #fff
-}
-tr:nth-child(odd) {background: #f0f0f0}
-#footer {
-background-color:rgba(0, 123, 162, 0.7);
-padding:10px;
-text-align:center;
-}
-</style>
-
-</head>
-<body>
-<div id="cont">
-<h1><a href="http://joekentliberty.com/">Gay Rights | JoekentLiberty</a></h1>
-<h3>Directory for Joekentliberty Gay Rights</h3>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-  <tr valign="top">
-	<td class="lpart" colspan="100">
-		<table cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tr><td><a href="http://joekentliberty.com/" title="Gay Rights and Liberty">Gay Rights and Liberty</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/how-chatline-works.html" title="How the Chatline Works">How the Chatline Works</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/milwaukee-chatline.html" title="Gay chat line in Milwaukee">Gay chat line in Milwaukee</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/privacy.html" title="Privacy Policy">Privacy Policy</a></td></tr>
-		</table>
-	</td>
-  </tr>
-</table>
-<h3>ChatlinePal blog</h3>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-  <tr valign="top">
-	<td class="lpart" colspan="100">
-		<table cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tr><td><a href="http://chatlinepal.com/chat-line-safety-tips.html" title="Chat Line - Safety Tips">Chat line - Safety Tips</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/phone-call-phone-numbers.html" title="Chat Line for Gay | A Phone to Start">Chat Line for Gay | A Phone to Start</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/chat-line-free.html" title="Chat Line for Gay | Free Trial ">Chat Line for Gay | Free Trial </a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/chatline-greetings.html" title="Chat Line for Gay | Chatline Greetings">Chat Line for Gay | Chatline Greetings</a></td></tr>
-			<tr><td><a href="http://chatlinepal.com/top-5-customer-rated-gay-chat-line.html" title="Chat Line for Gay | Top 5 Customer Rated Gay Chat Line">Chat Line for Gay | Top 5 Customer Rated Gay Chat Line</a></td></tr>
-		</table>
-	</td>
-  </tr>
-</table>
-<h3>ChatlinePal on Mobile</h3>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-  <tr valign="top">
-	<td class="lpart" colspan="100">
-		<table cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tr><td><a href="http://chatlinepal.com/gay-chatline.html" title="Gay Chatline | Call Sexy Local Guys Now">Gay Chatline | Call Sexy Local Guys Now</a></td></tr>
-		</table>
-	</td>
-  </tr>
-</table>
-
-<div id="footer">
-JoekentLiberty - <a target="_blank" href="https://joekentliberty.com">Gay Rights | Liberty</a> 
-</div>
-</div>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:10 %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
