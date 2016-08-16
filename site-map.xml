@@ -5,17 +5,23 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 		<loc>http://joekentliberty.com/</loc>
 		<lastmod>2016-08-14</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
+		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>http://joekentliberty.com/about.html</loc>
+		<loc>http://joekentliberty.com/about/</loc>
 		<lastmod>2016-08-14</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://joekentliberty.com/elements.html</loc>
+		<loc>http://joekentliberty.com/sources/</loc>
 		<lastmod>2016-08-14</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://joekentliberty.com/meet-joe/</loc>
+		<lastmod>2016-08-16</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>0.5</priority>
 	</url>
